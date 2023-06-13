@@ -12,7 +12,7 @@ const DiceRoll = ({ type, onRollDice }) => {
     return (
         <div>
             <img
-                src={`dice-k${type}.png`}
+
                 alt={`Kość k${type}`}
                 style={{ cursor: 'pointer' }}
                 onClick={rollDice}

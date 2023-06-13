@@ -5,11 +5,9 @@
 }
 
 .character-info__column {
-  border-right: 1px solid white;
   padding-right: 10px;
 }
 
-.character-info__column:last-child {
-  border-right: none;
-  padding-right: 0;
+.character-info__column:not(:last-child) {
+  border-right: 1px solid white;
 }
