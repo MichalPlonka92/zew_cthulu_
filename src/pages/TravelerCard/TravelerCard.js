@@ -9,11 +9,13 @@ import Inventory from './Inventory';
 import Finances from './Finances';
 import History from './History';
 import './TravelerCard.scss';
+import TravelList from '../TravelerList/TravelerList';
 
 const TravelerCard = ({ travelers, setTravelers }) => {
     const { id } = useParams();
     const navigate = useNavigate();
     const [strength, setStrength] = useState('');
+
 
     const traveler = travelers.find((traveler) => traveler.id.toString() === id);
 
@@ -29,12 +31,20 @@ const TravelerCard = ({ travelers, setTravelers }) => {
         console.log(`Wyrzucono ${result} na kości typu ${diceType}`);
     };
 
+    const handleDeleteTraveler = (id) => {
+        const updatedTravelers = travelers.filter((traveler) => traveler.id !== id);
+        setTravelers(updatedTravelers);
+        navigate('/');
+    };
+
     const handleGoBackToList = () => {
         navigate('/');
     };
 
     return (
-        <div>
+        <div className="card-container">
+            <TravelList travelers={travelers} onDeleteTraveler={handleDeleteTraveler} />
+
             <h1>Karta podróżnika - {traveler.name}</h1>
             <nav>
                 <ul>
@@ -78,7 +88,8 @@ const TravelerCard = ({ travelers, setTravelers }) => {
             <DiceRoll type={10} onRollDice={handleRollDice} />
             <DiceRoll type={100} onRollDice={handleRollDice} />
 
-            <button onClick={handleGoBackToList}>Powrót do listy</button>
+            <button onClick={() => handleDeleteTraveler(traveler.id)}>Usuń</button>
+            <button onClick={handleGoBackToList}>Powrót</button>
         </div>
     );
 };

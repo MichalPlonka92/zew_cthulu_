@@ -1,6 +1,7 @@
 .additional-info {
   display: flex;
   align-items: center;
+  color: white;
 }
 
 .additional-info__container {
@@ -10,6 +11,8 @@
 
 .additional-info__container > div {
   margin-right: 10px;
+  display: flex;
+  align-items: center;
 }
 
 .additional-info__container span {

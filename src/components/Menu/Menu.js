@@ -34,8 +34,8 @@ const Menu = () => {
                         <Nav.Link as={Link} to="/traveler/123">
                             Traveler card
                         </Nav.Link>
-                        <Nav.Link as={Link} to="/description">
-                            Description
+                        <Nav.Link as={Link} to="/traveler-list">
+                            Traveler list
                         </Nav.Link>
                     </Nav>
                 </Navbar.Collapse>

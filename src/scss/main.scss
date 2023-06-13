@@ -4,15 +4,34 @@
   box-sizing: border-box;
   color: white;
 }
+
 body {
   background-image: url('../../public/zew_2.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
   min-height: 100vh;
+  background-attachment: fixed;
 }
 
 .container {
   background-color: rgba(128, 128, 128, 0.5); /* Półprzezroczyste szare tło */
   color: white;
+}
+
+.button {
+  --darkreader-text--bs-btn-color: #e8e6e3;
+  --darkreader-bg--bs-btn-bg: #0250c4;
+  --darkreader-border--bs-btn-border-color: #0147ae;
+  --darkreader-text--bs-btn-hover-color: #e8e6e3;
+  --darkreader-bg--bs-btn-hover-bg: #094bac;
+  --darkreader-border--bs-btn-hover-border-color: #094fb6;
+  --darkreader-bg--bs-btn-focus-shadow-rgb: 2, 72, 174;
+  --darkreader-text--bs-btn-active-color: #e8e6e3;
+  --darkreader-bg--bs-btn-active-bg: #0846a2;
+  --darkreader-border--bs-btn-active-border-color: #0a51b9;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --darkreader-text--bs-btn-disabled-color: #e8e6e3;
+  --darkreader-bg--bs-btn-disabled-bg: #0250c4;
+  --darkreader-border--bs-btn-disabled-border-color: #0147ae;
 }
