@@ -13,7 +13,6 @@ import './TravelerCard.scss';
 const TravelerCard = ({ travelers, setTravelers }) => {
     const { id } = useParams();
     const navigate = useNavigate();
-    const [editedTraveler, setEditedTraveler] = useState(null);
     const [strength, setStrength] = useState('');
 
     const traveler = travelers.find((traveler) => traveler.id.toString() === id);
@@ -22,37 +21,9 @@ const TravelerCard = ({ travelers, setTravelers }) => {
         return <div>Nie znaleziono podróżnika.</div>;
     }
 
-    const handleEditTraveler = (event) => {
-        event.preventDefault();
-        const updatedTravelers = travelers.map((t) => {
-            if (t.id === traveler.id) {
-                return { ...t, ...editedTraveler };
-            }
-            return t;
-        });
-        setTravelers(updatedTravelers);
-
-        navigate(`/traveler/${traveler.id}`);
-    };
-
-    const handleChange = (event) => {
-        const { name, value } = event.target;
-        setEditedTraveler((prevTraveler) => ({
-            ...prevTraveler,
-            [name]: value,
-        }));
-    };
-
     const handleStrengthChange = (value) => {
         setStrength(value);
     };
-
-    const renderEditableField = (label, name, value) => (
-        <div key={name}>
-            <label>{label}:</label>
-            <input type="text" name={name} value={value} onChange={handleChange} />
-        </div>
-    );
 
     const handleRollDice = (diceType, result) => {
         console.log(`Wyrzucono ${result} na kości typu ${diceType}`);

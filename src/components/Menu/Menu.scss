@@ -1,5 +1,8 @@
 .menu {
-  background-color: black;
+  .bg-light {
+    --darkreader-bg--bs-bg-opacity: 1;
+    background-color: black !important;
+  }
 
   .navbar-brand {
     color: white;
@@ -10,7 +13,7 @@
     color: white;
 
     &:hover {
-      color: white;
+      color: black;
       text-decoration: none;
     }
   }

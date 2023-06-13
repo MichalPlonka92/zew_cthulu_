@@ -4,9 +4,12 @@
   box-sizing: border-box;
   color: white;
 }
-
 body {
-  background-color: rgba(128, 128, 128, 0.5); /* Półprzezroczyste szare tło */
+  background-image: url('../../public/zew_2.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  min-height: 100vh;
 }
 
 .container {

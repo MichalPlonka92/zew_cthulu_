@@ -23,16 +23,9 @@ const App = () => {
         localStorage.setItem('travelers', JSON.stringify(travelers));
     }, [travelers]);
 
-
-    const appStyle = {
-        backgroundImage: `url(${process.env.PUBLIC_URL}/bgc_black.avif)`,
-        backgroundSize: 'cover',
-        minHeight: '100vh',
-    };
-
     return (
         <Router>
-            <div style={appStyle}>
+            <div className="app">
                 <Menu />
                 <Routes>
                     <Route path="/" element={<Home />} />
