@@ -1,0 +1,23 @@
+.create-traveler {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+
+    input,
+    select {
+      width: 100%;
+      padding: 5px;
+      color: black; /* Dodana reguła dla koloru czcionki */
+    }
+  }
+
+  button {
+    margin-top: 10px;
+    color: black; /* Dodana reguła dla koloru czcionki */
+  }
+}

@@ -1,0 +1,18 @@
+.additional-info {
+  display: flex;
+  align-items: center;
+}
+
+.additional-info__container {
+  display: flex;
+  align-items: center;
+}
+
+.additional-info__container > div {
+  margin-right: 10px;
+}
+
+.additional-info__container span {
+  margin-left: 10px;
+  cursor: pointer;
+}

@@ -1,0 +1,15 @@
+.character-info__details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.character-info__column {
+  border-right: 1px solid white;
+  padding-right: 10px;
+}
+
+.character-info__column:last-child {
+  border-right: none;
+  padding-right: 0;
+}

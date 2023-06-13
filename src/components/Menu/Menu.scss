@@ -1,0 +1,17 @@
+.menu {
+  background-color: black;
+
+  .navbar-brand {
+    color: white;
+    font-weight: bold;
+  }
+
+  .nav-link {
+    color: white;
+
+    &:hover {
+      color: white;
+      text-decoration: none;
+    }
+  }
+}
