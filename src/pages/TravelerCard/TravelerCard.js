@@ -9,13 +9,11 @@ import Inventory from './Inventory';
 import Finances from './Finances';
 import History from './History';
 import './TravelerCard.scss';
-import TravelList from '../TravelerList/TravelerList';
 
 const TravelerCard = ({ travelers, setTravelers }) => {
     const { id } = useParams();
     const navigate = useNavigate();
     const [strength, setStrength] = useState('');
-
 
     const traveler = travelers.find((traveler) => traveler.id.toString() === id);
 
@@ -43,8 +41,6 @@ const TravelerCard = ({ travelers, setTravelers }) => {
 
     return (
         <div className="card-container">
-            <TravelList travelers={travelers} onDeleteTraveler={handleDeleteTraveler} />
-
             <h1>Karta podróżnika - {traveler.name}</h1>
             <nav>
                 <ul>
@@ -88,8 +84,18 @@ const TravelerCard = ({ travelers, setTravelers }) => {
             <DiceRoll type={10} onRollDice={handleRollDice} />
             <DiceRoll type={100} onRollDice={handleRollDice} />
 
-            <button onClick={() => handleDeleteTraveler(traveler.id)}>Usuń</button>
-            <button onClick={handleGoBackToList}>Powrót</button>
+            <div className="travelers-list">
+                <h2>Lista podróżników</h2>
+                <ul>
+                    {travelers.map((traveler) => (
+                        <li key={traveler.id}>
+                            <Link to={`/traveler/${traveler.id}`}>{traveler.name}</Link>
+                        </li>
+                    ))}
+                </ul>
+                <button onClick={() => handleDeleteTraveler(traveler.id)}>Usuń</button>
+                <button onClick={handleGoBackToList}>Powrót</button>
+            </div>
         </div>
     );
 };

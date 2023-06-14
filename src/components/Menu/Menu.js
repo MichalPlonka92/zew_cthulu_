@@ -1,42 +1,36 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
+import { Container, Nav, Navbar } from 'react-bootstrap';
 import './Menu.scss';
 
 const Menu = () => {
     const [isExpanded, setIsExpanded] = useState(false);
 
-    const handleNavItemClick = () => {
-        setIsExpanded(false);
+    const toggleMenu = () => {
+        setIsExpanded(prevState => !prevState);
     };
 
-    const toggleMenu = () => {
-        setIsExpanded(!isExpanded);
-    };
+    const navItems = [
+        { to: '/', label: 'Home' },
+        { to: '/create-traveler', label: 'Create traveler' },
+        { to: '/traveler/123', label: 'Traveler card' },
+        { to: '/traveler-list', label: 'Traveler list' }
+    ];
 
     return (
-        <Navbar bg="light" expand="lg" className={`menu ${isExpanded ? 'expanded' : ''}`}>
+        <Navbar bg="dark" expand="lg" className={`menu ${isExpanded && 'expanded'}`}>
             <Container>
                 <Navbar.Brand as={Link} to="/">
                     Zew Cthulhu
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={toggleMenu} />
                 <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="me-auto" onClick={handleNavItemClick}>
-                        <Nav.Link as={Link} to="/">
-                            Home
-                        </Nav.Link>
-                        <Nav.Link as={Link} to="/create-traveler">
-                            Create traveler
-                        </Nav.Link>
-                        <Nav.Link as={Link} to="/traveler/123">
-                            Traveler card
-                        </Nav.Link>
-                        <Nav.Link as={Link} to="/traveler-list">
-                            Traveler list
-                        </Nav.Link>
+                    <Nav className="me-auto" onClick={() => setIsExpanded(false)}>
+                        {navItems.map(item => (
+                            <Nav.Link as={Link} to={item.to} key={item.to}>
+                                {item.label}
+                            </Nav.Link>
+                        ))}
                     </Nav>
                 </Navbar.Collapse>
             </Container>

@@ -56,18 +56,21 @@
     padding: 5px;
   }
 
-  .dice-rolls {
+  .dice-roll {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
+    cursor: pointer;
   }
 
-  .dice-rolls i {
-    font-size: 24px;
+  .dice-roll__text {
     margin-right: 10px;
+    padding: 5px;
+    background-color: #f0f0f0;
+    border-radius: 3px;
   }
 
-  .dice-rolls span {
-    margin-right: 10px;
+  .dice-roll__result {
+    padding: 5px;
   }
 }
