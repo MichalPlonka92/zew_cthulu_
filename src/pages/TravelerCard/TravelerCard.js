@@ -74,7 +74,7 @@ const TravelerCard = ({ travelers, setTravelers }) => {
             <Routes>
                 {/* Rutowanie do odpowiednich komponentów na podstawie ścieżki */}
                 <Route path="/" element={<CharacterInfo traveler={traveler} />} />
-                <Route path="/skills" element={<SkillsList />} />
+                <Route path="/skills" element={<SkillsList skills={traveler.skills} />} />
                 <Route path="/combat" element={<CombatAndEquipment />} />
                 <Route path="/inventory" element={<Inventory />} />
                 <Route path="/finances" element={<Finances />} />
