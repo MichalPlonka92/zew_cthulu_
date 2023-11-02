@@ -7,7 +7,7 @@ import SkillsList from './SkillsList';
 import CombatAndEquipment from './CombatAndEquipment';
 import Inventory from './Inventory';
 import Finances from './Finances';
-import History from './History';
+import History from './History'; // Import komponentu History
 import './TravelerCard.scss';
 
 const TravelerCard = ({ travelers, setTravelers }) => {

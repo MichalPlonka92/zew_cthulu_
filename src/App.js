@@ -25,20 +25,12 @@ const App = () => {
 
     return (
         <Router>
-            <div className="app">
-                <Menu />
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route
-                        path="/create-traveler"
-                        element={<CreateTraveler setTravelers={setTravelers} />}
-                    />
-                    <Route
-                        path="/traveler/:id"
-                        element={<TravelerCard travelers={travelers} setTravelers={setTravelers} />}
-                    />
-                </Routes>
-            </div>
+            <Menu />
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/create-traveler" element={<CreateTraveler setTravelers={setTravelers} />} />
+                <Route path="/traveler/:id" element={<TravelerCard travelers={travelers} setTravelers={setTravelers} />} />
+            </Routes>
         </Router>
     );
 };
