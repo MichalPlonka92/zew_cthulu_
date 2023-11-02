@@ -65,6 +65,7 @@ const TravelerCard = ({ travelers, setTravelers }) => {
                     <li>
                         <Link to={`/traveler/${id}/finances`}>Finanse</Link>
                     </li>
+                    {/* Dodaj osobny link do historii */}
                     <li>
                         <Link to={`/traveler/${id}/history`}>Historia</Link>
                     </li>
